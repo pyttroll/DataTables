@@ -269,10 +269,17 @@ if ( nThead.length !== 0 )
 if ( oInit.aoColumns === null )
 {
 	aoColumnsInit = [];
-	for ( i=0, iLen=anThs.length ; i<iLen ; i++ )
-	{
-		aoColumnsInit.push( null );
-	}
+	if (anThs.length > 0) {
+        for ( i=0, iLen=anThs.length ; i<iLen ; i++ )
+        {
+            aoColumnsInit.push( null );
+        }
+    }
+    else if(oInit.aoColumnDefs != null){
+        for (i = 0, iLen = oInit.aoColumnDefs.length; i < iLen; i++) {
+            aoColumnsInit.push(null);
+        }                   
+    }
 }
 else
 {
